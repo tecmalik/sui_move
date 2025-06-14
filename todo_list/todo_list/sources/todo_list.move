@@ -28,7 +28,7 @@ public fun delete(list: TodoList) {
     let TodoList { id, items: _ } = list;
     id.delete();
 }
-public fun length(list: &TodoList):U64 {
+public fun length(list: &TodoList):u64 {
     list.items.length()
 }
 
