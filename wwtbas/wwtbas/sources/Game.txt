@@ -1,0 +1,14 @@
+ELEMENTS
+player
+scoreboard
+quiz
+-questions(content, options)
+-options (right option specified)
+-answer
+Game features
+submit
+start
+reset
+next
+previous
+select option
