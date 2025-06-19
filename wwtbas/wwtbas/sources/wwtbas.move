@@ -1,9 +1,9 @@
 
 /// Module: wwtbas
 module wwtbas::wwtbas{
-    use sui::transfer::public_transfer;
-    use sui::test_scenario::sender;
-    use std::{debug, string, string::String};
+    use sui::debug;
+    use sui::string;
+    use std::string::String;
     use std::vector;
     
     public struct Quiz has key, store {
@@ -14,7 +14,7 @@ module wwtbas::wwtbas{
    public fun new_quiz(ctx: &mut TxContext): Quiz {
     let quiz= Quiz{
         id:object::new(ctx),
-        questions: vector[]
+        questions: vector[],
 
     };
     debug::print(&quiz);
@@ -22,15 +22,16 @@ module wwtbas::wwtbas{
       
    }
 
-   public fun add_question(quiz:Quiz, question: string::String) {
-    quiz.questions.push_back(question);
-        debug::print(&)
+   public fun add_question(quiz: &mut Quiz, question:String) {
+    let questions = &mut quiz.questions;
+     questions.push_back(question);
+        debug::print(questions);
       
    }
-
-   public fun get_question_size(quiz:Quiz): vector<String> {
-    quiz.questions
-   }
+ 
+//    public fun get_question_size(quiz:Quiz): vector<String> {
+//     quiz.questions
+//    }
 
    #[test, expected_failure(abort_code = ::wwtbas::wwtbas_tests::ENotImplemented)]
     fun test_can_add_question_to_quiz() {
