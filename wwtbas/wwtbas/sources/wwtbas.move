@@ -1,8 +1,8 @@
 
 /// Module: wwtbas
 module wwtbas::wwtbas{
-    use sui::debug;
-    use sui::string;
+    use std::debug;
+    use std::string;
     use std::string::String;
     use std::vector;
     
@@ -11,7 +11,7 @@ module wwtbas::wwtbas{
     questions: vector<String>
     }
 
-   public fun new_quiz(ctx: &mut TxContext): Quiz {
+   public fun new_quiz(ctx: &mut TxContext){
     let quiz= Quiz{
         id:object::new(ctx),
         questions: vector[],
