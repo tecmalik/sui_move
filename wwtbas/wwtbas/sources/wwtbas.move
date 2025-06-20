@@ -39,7 +39,7 @@ module wwtbas::wwtbas{
     let scenario = test_scenario::begin(sender);
     let ctx = scenario.ctx();
     let quiz = wwtbas::Quiz {
-        id: object::new(ctx),
+        id: object::new(ctx),npmn
     };
     let question  = string::utf8(b"what is the capital of Malawi?");
     quiz.add_question(question);
@@ -47,4 +47,3 @@ module wwtbas::wwtbas{
 
     }
 }
-
