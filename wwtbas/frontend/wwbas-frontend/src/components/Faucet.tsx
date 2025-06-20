@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { getFaucetHost, requestSuiFromFaucetV2 } from '@mysten/sui/faucet';
 
 const Faucet = () => {
-    useEffect(() =>{
+    useEffect(() => {
         async function fetchFaucet(){
 	
         await requestSuiFromFaucetV2({
@@ -13,7 +13,7 @@ const Faucet = () => {
     }).then((res)=>{
         console.log(res);
     });
-
+    headers:{''}
     } 
     fetchFaucet();
     },[])
