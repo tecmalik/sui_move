@@ -4,11 +4,10 @@ import {useEffect} from 'react';
 
 
 const Coins =()=>
-    
+
 const rpcUrl = getFullnodeUrl('testnet');
 
 const client = new SuiClient({ url: rpcUrl });
-
 useEffect(()=>{
     async function feachCoinsFor(adress:string){
         await client.getCoins({
